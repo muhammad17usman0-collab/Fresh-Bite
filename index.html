@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fresh Bite | Big Burgers. Real Fire. Honest Food.</title>
+<meta name="description" content="Fresh Bite — flame-grilled burgers, wood-fired pizza and hand-cut fries. Order online or visit us across Pakistan.">
+<meta property="og:title" content="Fresh Bite | Big Burgers. Real Fire. Honest Food.">
+<meta property="og:description" content="Flame-grilled burgers, wood-fired pizza and hand-cut fries — the Fresh Bite way.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header id="site-header">
+  <div class="wrap nav-row">
+    <a href="#" class="brand">Fresh<span>Bite</span></a>
+    <nav>
+      <a href="#favorites">Favorites</a>
+      <a href="#menu">Menu</a>
+      <a href="#story">Story</a>
+      <a href="#deals">Deals</a>
+      <a href="#locations">Locations</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="cart-btn" onclick="toggleCart(true)">🛒<span class="cart-count" id="cartCount">0</span></button>
+      <button class="btn btn-outline" style="padding:10px 16px" onclick="document.getElementById('menu').scrollIntoView()">Order Now</button>
+      <button class="burger" onclick="document.getElementById('mnav').classList.toggle('open')"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mnav">
+    <a href="#favorites">Favorites</a><a href="#menu">Menu</a><a href="#story">Story</a>
+    <a href="#deals">Deals</a><a href="#locations">Locations</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="badge">Flame-Grilled Since Day One</span>
+      <h1>BIG BURGERS.<br>REAL FIRE.<br>HONEST FOOD.</h1>
+      <p>Hand-pressed patties, wood-fired pizza and hand-cut fries — cooked hot, served fresh, no shortcuts.</p>
+      <div class="hero-actions">
+        <button class="btn btn-primary" onclick="document.getElementById('menu').scrollIntoView()">Order Now</button>
+        <button class="btn btn-outline" onclick="document.getElementById('favorites').scrollIntoView()">Explore Menu</button>
+      </div>
+    </div>
+    <div class="photo hero-photo"><div class="food-icon"><svg viewBox="0 0 160 170">
+  <path d="M14 46 Q80 4 146 46 L146 58 L14 58 Z" fill="#d99a54"/>
+  <circle cx="50" cy="28" r="3" fill="#f4ecdd"/><circle cx="80" cy="20" r="3" fill="#f4ecdd"/><circle cx="110" cy="28" r="3" fill="#f4ecdd"/>
+  <path d="M12 58 Q80 72 148 58 L148 68 Q80 82 12 68 Z" fill="#6a8f4e"/>
+  <rect x="16" y="68" width="128" height="16" rx="7" fill="#5a3323"/>
+  <path d="M16 84 q8 8 16 0 q8 8 16 0 q8 8 16 0 q8 8 16 0 q8 8 16 0 q8 8 16 0 q8 8 16 0 q8 8 16 0" stroke="#8c3a2c" stroke-width="6" fill="none" opacity=".85"/>
+  <path d="M16 98 L28 112 L42 98 L56 112 L70 98 L84 112 L98 98 L112 112 L126 98 L140 112 L144 98 L144 102 L16 102 Z" fill="#e8b93e"/>
+  <rect x="16" y="112" width="128" height="14" rx="6" fill="#5a3323"/>
+  <path d="M14 126 Q80 152 146 126 L146 136 Q80 162 14 138 Z" fill="#c9863f"/></svg></div><span class="tag">Flame-Grilled Beef Burger</span></div>
+  </div>
+</section>
+
+<section class="section" id="favorites">
+  <div class="wrap">
+    <div class="section-head">
+      <div><p class="eyebrow">Crowd Favorites</p><h2>What Everyone Orders</h2></div>
+    </div>
+    <div class="grid-cards" id="favGrid"></div>
+  </div>
+</section>
+
+<section class="section dark" id="menu">
+  <div class="wrap">
+    <div class="section-head"><div><p class="eyebrow">Full Menu</p><h2 style="color:var(--cream)">Pick Your Category</h2></div></div>
+    <div class="tabs" id="tabs"></div>
+    <div id="menuLists"></div>
+  </div>
+</section>
+
+<section class="section" id="story">
+  <div class="wrap story-grid">
+    <div class="photo story-photo"><div class="food-icon"><svg viewBox="0 0 160 160">
+  <path d="M20 70 Q80 20 140 70 L140 82 L20 82 Z" fill="#d99a54"/>
+  <circle cx="55" cy="46" r="3" fill="#f4ecdd"/><circle cx="80" cy="38" r="3" fill="#f4ecdd"/><circle cx="105" cy="46" r="3" fill="#f4ecdd"/>
+  <path d="M18 82 Q80 98 142 82 L142 92 Q80 108 18 92 Z" fill="#6a8f4e"/>
+  <rect x="20" y="92" width="120" height="18" rx="7" fill="#5a3323"/>
+  <path d="M20 110 L30 124 L42 110 L54 124 L66 110 L78 124 L90 110 L102 124 L114 110 L126 124 L140 110 L140 114 L20 114 Z" fill="#e8b93e"/>
+  <path d="M20 124 Q80 150 140 124 L140 134 Q80 158 20 134 Z" fill="#c9863f"/></svg></div><span class="tag">The Original Grill</span></div>
+    <div class="story">
+      <p class="eyebrow">Our Story</p>
+      <h2>Fresh Ingredients. No Shortcuts.</h2>
+      <p>Fresh Bite started with a simple idea: real food, cooked properly, served without pretense. Every patty is hand-pressed, every pizza fired to order, every fry cut fresh — the way it should be.</p>
+      <p>What began as one small kitchen is now a home for anyone who wants a genuinely good meal, made with care and eaten without apology.</p>
+      <button class="btn btn-primary" onclick="document.getElementById('menu').scrollIntoView()">Taste The Difference</button>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:#efe6d0">
+  <div class="wrap">
+    <div class="section-head"><div><p class="eyebrow">Why Fresh Bite</p><h2>Built On Three Things</h2></div></div>
+    <div class="why-grid">
+      <div class="why-card"><div class="why-num">01</div><h3>Real Fire, Real Flavor</h3><p style="color:var(--muted);margin-top:8px">Every patty and pizza cooked over open flame for a taste you can't fake.</p></div>
+      <div class="why-card"><div class="why-num">02</div><h3>Value That Makes Sense</h3><p style="color:var(--muted);margin-top:8px">Generous portions and honest pricing, every single time.</p></div>
+      <div class="why-card"><div class="why-num">03</div><h3>Made To Order</h3><p style="color:var(--muted);margin-top:8px">Nothing sits under a heat lamp — we fire it when you order it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark" id="deals">
+  <div class="wrap">
+    <div class="section-head"><div><p class="eyebrow">Limited Time</p><h2 style="color:var(--cream)">Hot Deals Right Now</h2></div></div>
+    <div class="grid-cards" id="dealGrid"></div>
+  </div>
+</section>
+
+<section class="section" id="locations">
+  <div class="wrap">
+    <div class="section-head"><div><p class="eyebrow">Find Us</p><h2>Across Pakistan</h2></div></div>
+    <div class="loc-list" style="border:1px solid #e4d8bf;border-radius:0">
+      <div class="loc-item" style="color:var(--ink);border-color:#e4d8bf">Islamabad</div>
+      <div class="loc-item" style="color:var(--ink);border-color:#e4d8bf">Rawalpindi</div>
+      <div class="loc-item" style="color:var(--ink);border-color:#e4d8bf">Lahore</div>
+      <div class="loc-item" style="color:var(--ink);border-color:#e4d8bf">Sialkot</div>
+      <div class="loc-item" style="color:var(--ink);border-color:#e4d8bf">Gujranwala</div>
+      <div class="loc-item" style="color:var(--ink);border-color:#e4d8bf">Faisalabad</div>
+      <div class="loc-item" style="color:var(--ink);border-color:#e4d8bf">Sargodha</div>
+      <div class="loc-item" style="color:var(--ink);border-color:#e4d8bf">Peshawar</div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark">
+  <div class="wrap">
+    <div class="section-head"><div><p class="eyebrow">Tag Us</p><h2 style="color:var(--cream)">Show Us Your Fresh Bite</h2></div></div>
+    <div class="masonry" id="gallery"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="#" class="brand" style="display:inline-block;margin-bottom:12px">Fresh<span>Bite</span></a>
+        <p style="max-width:280px">Flame-grilled burgers, wood-fired pizza and hand-cut fries, made fresh every day.</p>
+      </div>
+      <div><h4>Explore</h4><ul><li><a href="#favorites">Favorites</a></li><li><a href="#menu">Menu</a></li><li><a href="#story">Our Story</a></li><li><a href="#locations">Locations</a></li></ul></div>
+      <div><h4>Menu</h4><ul><li>Deals</li><li>Burgers</li><li>Pizza</li><li>Quick Bites</li><li>Fries</li></ul></div>
+      <div><h4>Contact</h4><ul><li>UAN: 051 111 577 677</li><li>Order Online / WhatsApp</li><li>Facebook · Instagram</li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Fresh Bite. All rights reserved.</span>
+      <span>Terms &amp; Conditions · Privacy Policy</span>
+    </div>
+  </div>
+</footer>
+
+<div class="overlay" id="overlay" onclick="toggleCart(false)"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-head"><h3 style="font-family:var(--disp)">Your Order</h3><button onclick="toggleCart(false)" style="font-size:1.3rem">✕</button></div>
+  <div class="cart-items" id="cartItems"><div class="cart-empty">Your cart is empty.</div></div>
+  <div class="cart-foot">
+    <div style="display:flex;justify-content:space-between;font-weight:800;margin-bottom:14px"><span>Total</span><span id="cartTotal">Rs 0</span></div>
+    <button class="btn btn-primary" style="width:100%;justify-content:center">Checkout</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
